@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import { gql, GraphQLClient } from 'graphql-request';
+
 
 export const getStaticProps = async () => {
 
@@ -40,11 +42,31 @@ query {
   };
 }
 
+
+
+
 export default function Home({ videos }) {
-  console.log(videos, "videos");
+  console.log(videos, 'video');
+
+  const randomVideo = (videos) => {
+    return videos[Math.floor(Math.random() * videos.length)];
+  }
+  const urlImg = randomVideo(videos).thumbnial.url;
+
+
+
   return (
-    <div >
-      Bonjour
-    </div>
+    <>
+      <div className="app">
+        <div className="main-video">
+          <Image src={urlImg} alt={randomVideo(videos).title} width={1000} height={900} />
+        </div>
+        <div className="video-feed">
+
+        </div>
+
+      </div>
+
+    </>
   )
 }
