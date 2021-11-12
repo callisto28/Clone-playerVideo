@@ -59,8 +59,11 @@ export default function Home({ videos }) {
   return (
     <>
       <div className="app">
-        <div className="main-video">
-          <Image src={urlImg} alt={randomVideo(videos).title} width={1000} height={900} />
+        <div className="main-video mb-12">
+          <Image src={urlImg} alt={randomVideo(videos).title} width={18}
+            height={9}
+            layout="responsive"
+            quality={85} />
         </div>
         <div className="video-feed">
           <Section genre={'Family'} />
