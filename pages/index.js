@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { gql, GraphQLClient } from 'graphql-request';
+import Section from '../components/Section';
 
 
 export const getStaticProps = async () => {
@@ -62,7 +63,14 @@ export default function Home({ videos }) {
           <Image src={urlImg} alt={randomVideo(videos).title} width={1000} height={900} />
         </div>
         <div className="video-feed">
-
+          <Section genre={'Family'} />
+          <Section genre={'Classic'} />
+          <Section genre={'Thriller'} />
+          <Section genre={'Pixar'} />
+          <Section genre={'Marvel'} />
+          <Section genre={'National Geographic'} />
+          <Section genre={'Disney'} />
+          <Section genre={'Star Wars'} />
         </div>
 
       </div>
