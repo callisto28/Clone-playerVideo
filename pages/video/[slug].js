@@ -1,7 +1,7 @@
 import { gql, GraphQLClient } from 'graphql-request';
 
 export const getServerSideProps = async (pageContext) => {
-    console.log(pageContext, '--> pageContext');
+    // console.log(pageContext, '--> pageContext');
 
     const url = process.env.ENDPOINT;
     const graphQLClient = new GraphQLClient(url, {
@@ -10,7 +10,7 @@ export const getServerSideProps = async (pageContext) => {
         }
     });
     const pageSlug = pageContext.query.slug.toLowerCase();
-    console.log(pageSlug, '--> pageSlug');
+    // console.log(pageSlug, '--> pageSlug');
 
     const query = gql`
     query($pageSlug: String!){ 
@@ -39,24 +39,13 @@ export const getServerSideProps = async (pageContext) => {
 
 
     const data = await graphQLClient.request(query, variables)
-    console.log(data, '--> data');
+    // console.log(data, '--> data');
     const video = data.video;
-    console.log(video, '--> video');
+    // console.log(video, '--> video');
     return {
         props: {
             video
         }
     }
-
-}
-
-
-export default function Video({ video }) {
-    console.log(video, '--> video');
-    return (
-        <div>
-
-        </div>
-    )
 
 }
