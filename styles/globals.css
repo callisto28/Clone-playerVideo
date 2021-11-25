@@ -19,7 +19,7 @@ a {
 
 .main-video {
   position: relative;
-  width: 100vw;
+  /* width: 96vw; */
   height: 30vh;
   overflow: hidden;
   border-radius: 20px;
@@ -31,4 +31,8 @@ a {
   border-radius: 5px;
   margin: 5px;
   filter: drop-shadow(5px 5px 10px #000);
+}
+
+.info-footer {
+  height: 2vh;
 }
